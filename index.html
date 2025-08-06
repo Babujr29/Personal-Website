@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shivam | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0b0c;
+      --fg:#f6f6f7;
+      --muted:#a4a6ad;
+      --brand:#7e7bf6;
+      --card:#121214;
+      --accent:#e5e7ff;
+      --shadow: 0 20px 60px rgba(0,0,0,.45);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: radial-gradient(1200px 600px at 75% -10%, rgba(126,123,246,.25), transparent 70%),
+                  radial-gradient(800px 400px at 10% 110%, rgba(126,123,246,.18), transparent 60%),
+                  var(--bg);
+      color:var(--fg);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height:1.5;
+    }
+    a{color:inherit; text-decoration:none}
+    .nav{
+      position:fixed; inset-inline:0; top:0; z-index:50;
+      display:flex; align-items:center; justify-content:space-between;
+      max-width:1100px; margin:0 auto; padding:18px 20px;
+    }
+    .nav .brand{
+      font-weight:800; letter-spacing:.4px; font-size:20px;
+      display:flex; align-items:center; gap:10px;
+    }
+    .dot{width:10px; height:10px; border-radius:50%; background:linear-gradient(135deg,var(--brand),#9aa1ff); box-shadow:0 0 18px rgba(126,123,246,.8)}
+    .nav .links{display:flex; gap:18px; align-items:center}
+    .nav .links a{
+      padding:8px 12px; border-radius:12px; color:var(--accent);
+      opacity:.9; transition:all .25s ease;
+    }
+    .nav .links a:hover{background:rgba(255,255,255,.06); opacity:1; transform:translateY(-1px)}
+    main{min-height:100vh; display:grid; place-items:center; padding:100px 20px 60px}
+    .hero{
+      width:100%; max-width:1100px; display:grid; grid-template-columns:1.1fr .9fr; gap:28px; align-items:center;
+    }
+    @media (max-width:900px){ .hero{grid-template-columns:1fr} }
+    .title{
+      font-family:"Playfair Display", serif;
+      font-weight:700; letter-spacing:.3px; margin:0 0 12px;
+      font-size:clamp(42px, 6vw, 86px); line-height:1.03;
+      background: linear-gradient(180deg, #fff, #cfd2ff); -webkit-background-clip: text; background-clip:text; color:transparent;
+      text-shadow: 0 6px 40px rgba(126,123,246,.12);
+    }
+    .subtitle{color:var(--muted); font-size:clamp(16px, 2.2vw, 20px); margin-bottom:28px}
+    .cta{
+      display:flex; gap:14px; align-items:center; flex-wrap:wrap;
+    }
+    .button{
+      display:inline-flex; align-items:center; gap:10px; padding:12px 18px; border-radius:14px; font-weight:600;
+      background:linear-gradient(135deg,var(--brand),#9aa1ff); color:#0d0d10; border:1px solid rgba(255,255,255,.1);
+      box-shadow:var(--shadow); transform: translateZ(0);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .button:hover{transform:translateY(-2px); box-shadow: 0 24px 70px rgba(126,123,246,.45)}
+    .ghost{background:transparent; color:var(--fg); border:1px solid rgba(255,255,255,.12); box-shadow:none}
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.00));
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:20px; padding:18px; box-shadow: var(--shadow);
+    }
+    .stats{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
+    .stat{padding:14px 16px; border-radius:16px; background:var(--card); border:1px solid rgba(255,255,255,.06)}
+    .stat .n{font-weight:800; font-size:28px}
+    .footnote{color:var(--muted); font-size:13px; margin-top:12px}
+    .frame{
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.08); border-radius:26px; padding:16px;
+    }
+    .mock{
+      aspect-ratio: 16/11; border-radius:18px; background:linear-gradient(180deg, #1b1b1f, #0e0e12);
+      border:1px solid rgba(255,255,255,.08); display:grid; place-items:center; font-weight:700; color:#b8bcff;
+    }
+    footer{max-width:1100px; padding:30px 20px 60px; margin:0 auto; color:var(--muted); text-align:center}
+    .slideshow {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.slideshow img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slideshow img.active {
+  opacity: 1;
+}
+
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="brand"><span class="dot"></span> SHIVAM</div>
+    <div class="links">
+      <a href="explore.html#projects">Projects</a>
+      <a href="explore.html#skills">Skills</a>
+      <a href="explore.html#experience">Experience</a>
+      <a href="explore.html#education">Education</a>
+      <a href="mailto:shivamranchi6@gmail.com">Contact</a>
+      <a href="about.html">About Me</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div>
+        <h1 class="title">Hello, I am SHIVAM.</h1>
+        <p class="subtitle">Economics student at CHRIST (Deemed to be University), data-minded and outcome-focused. I love turning messy datasets into crisp, decision-ready insights—especially with Excel, SQL and Power BI.</p>
+        <div class="cta">
+          <a class="button" href="explore.html">Explore</a>
+          <a class="button ghost" href="https://www.linkedin.com/in/shivam-1ba0b3286/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="button ghost" href="https://github.com/Babujr29" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="footnote">Bengaluru, India • Open to work and project collaborations</div>
+        <div class="stats" style="margin-top:18px">
+          <div class="stat">
+            <div class="n">1,00,000+ </div>
+            <div class="l">SKUs scraped & analyzed</div>
+          </div>
+          <div class="stat">
+            <div class="n">4</div>
+            <div class="l">Warehouses optimized</div>
+          </div>
+          <div class="stat">
+            <div class="n">1,000+</div>
+            <div class="l">college records mined</div>
+          </div>
+        </div>
+      </div>
+      <div class="frame">
+         <h3 style="margin:0 0 12px; font-family:'Playfair Display',serif; font-weight:700; font-size:20px; color:#e5e7ff; letter-spacing:.3px;">
+    Highlights from My Work
+  </h3>
+  <div class="slideshow">
+    <img src="Slide 1.png" alt="Slide 1">
+    <img src="Slide 2.png" alt="Slide 2">
+    <img src="Slide 3.png" alt="Slide 3">
+  </div>
+</div>
+    </section>
+  </main>
+
+  <footer>© <span id="y"></span> Shivam. Built with love and good coffee.</footer>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+  <script>
+  const slides = document.querySelectorAll('.slideshow img');
+  let currentSlide = 0;
+  
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === index);
+    });
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  // Init
+  showSlide(currentSlide);
+  setInterval(nextSlide, 5000); // change slide every 5s  
+</script>
+
+</body>
+</html>

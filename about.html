@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shivam | About Me</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0b0c; --fg:#f6f6f7; --muted:#a4a6ad; --brand:#7e7bf6; --card:#121214; --accent:#e5e7ff;
+      --shadow: 0 20px 60px rgba(0,0,0,.45);
+    }
+    *{box-sizing:border-box}
+    body{margin:0; background:var(--bg); color:var(--fg); font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif}
+    a{color:inherit; text-decoration:none}
+    .nav{position:sticky; top:0; z-index:50; backdrop-filter: blur(10px); background:rgba(11,11,12,.6); border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav-inner{max-width:1000px; margin:0 auto; padding:14px 20px; display:flex; align-items:center; justify-content:space-between}
+    .brand{font-weight:800; letter-spacing:.4px; font-size:20px; display:flex; align-items:center; gap:10px}
+    .dot{width:10px; height:10px; border-radius:50%; background:linear-gradient(135deg,var(--brand),#9aa1ff); box-shadow:0 0 18px rgba(126,123,246,.8)}
+    .links{display:flex; gap:16px}
+    .links a{padding:8px 12px; border-radius:12px; border:1px solid transparent}
+    .links a:hover{background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.10)}
+
+    main{max-width:1000px; margin:0 auto; padding:28px 20px 80px}
+
+    .hero{
+      display:grid; grid-template-columns: 1fr 1.2fr; gap:22px; align-items:center; margin-top:14px;
+    }
+    @media (max-width:900px){ .hero{grid-template-columns: 1fr} }
+    .portrait{
+      aspect-ratio: 4/5; border-radius:22px; overflow:hidden; background:linear-gradient(180deg,#15151a,#0f0f13); 
+      border:1px solid rgba(255,255,255,.08); display:grid; place-items:center; color:#b8bcff; font-weight:700;
+    }
+    .title{font-family:"Playfair Display", serif; font-weight:700; font-size:clamp(30px,3.4vw,48px); margin:0 0 10px}
+    .muted{color:var(--muted)}
+    .chip{display:inline-block; padding:8px 12px; border-radius:999px; border:1px solid rgba(255,255,255,.12); margin:6px 6px 0 0; background:rgba(255,255,255,.04); font-size:12px}
+    
+    .cards{display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; margin-top:26px}
+    @media (max-width:900px){ .cards{grid-template-columns:1fr 1fr} } @media (max-width:600px){ .cards{grid-template-columns:1fr} }
+    .card{background:var(--card); border:1px solid rgba(255,255,255,.06); border-radius:18px; padding:16px; box-shadow:var(--shadow)}
+    .card h3{margin:0 0 8px; font-size:18px}
+    .list{margin:0; padding-left:18px}
+    .list li{margin:6px 0}
+
+    .section{padding:28px 0}
+    footer{padding:30px 0 10px; color:var(--muted); text-align:center}
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="brand"><span class="dot"></span> SHIVAM</div>
+      <div class="links">
+        <a href="explore.html#projects">Projects</a>
+        <a href="explore.html#skills">Skills</a>
+        <a href="explore.html#experience">Experience</a>
+        <a href="explore.html#education">Education</a>
+        <a href="mailto:shivamranchi6@gmail.com">Contact</a>
+        <a href="index.html">Home</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="portrait">
+  <img src="shivam.jpg" alt="Shivam" style="width:100%; height:100%; object-fit:cover;">
+</div>
+      <div>
+        <h1 class="title">A bit about me</h1>
+        <p class="muted">
+          I’m Shivam — an economics student who loves turning real-world messy data into neat, decision-ready stories. 
+          Outside the spreadsheets and SQL tabs, I sing Bass and a Beatboxer in an <strong>Acappella</strong> group called <strong>SHADES</strong>, and I’m also the head of <strong>The Economics and Data Science Club </strong> of my college. Also sometimes I try to be <strong>funny</strong>.
+        </p>
+        <div>
+          <span class="chip">A cappella • Bass and Beatboxer</span>
+          <span class="chip">Cricket</span>
+          <span class="chip">Trains</span>
+          <span class="chip">Singing</span>
+          <span class="chip">Geography</span>
+          <span class="chip">Data Storytelling</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="cards">
+        <div class="card">
+          <h3>What I’m into</h3>
+          <ul class="list">
+            <li>TRAINS - yes, TRAINS! Railways and everything about them</li>
+            <li>Building clean dashboards that actually answer business questions</li>
+            <li>Geography and Railways </li>
+            <li>Late Discord calls and long night walks</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Stuff I’m learning</h3>
+          <ul class="list">
+            <li>Advanced Excel automation and analytics add-ins</li>
+            <li>Vibe Coding: Visualizing data with the power of Coding </li>
+            <li>Better data collection: scraping, cleaning, and bias checks</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Fun facts</h3>
+          <ul class="list">
+            <li>I can name 150+ countries of the world </li>
+            <li>Will eat your head talking about the Logistics sector of India</li>
+            <li>Will flex my knowledge of Indian Railways</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h3>Want to collaborate?</h3>
+        <p class="muted">I’m always up for projects where I can quantify impact — growing revenue, improving conversion, or speeding up operations.</p>
+        <p><a href="mailto:shivamranchi6@gmail.com" class="chip">Email me</a> <a class="chip" href="https://www.linkedin.com/in/shivam-1ba0b3286/" target="_blank" rel="noopener">LinkedIn</a></p>
+      </div>
+    </section>
+
+    <footer>© <span id="y"></span> Shivam</footer>
+  </main>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
